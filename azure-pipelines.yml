@@ -10,9 +10,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: ShellScript@2
-  inputs:
-    scriptPath: 'test.sh'
+
   
 - task: Maven@3
   inputs:
@@ -24,3 +22,7 @@ steps:
     publishJUnitResults: false
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+
+- task: ShellScript@2
+  inputs:
+    scriptPath: 'test.sh'
